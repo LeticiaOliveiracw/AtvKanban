@@ -24,7 +24,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/title_nova_tarefa_formtask_fragment"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:layout_gravity="center_horizontal"/>
 
         </com.google.android.material.appbar.MaterialToolbar>
@@ -73,32 +73,34 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textViewStatus">
                 <RadioButton
-                    android:layout_width="88dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
                     android:id="@+id/rbTodo"
                     android:text="@string/a_fazer_radiobutton"
                     android:checked="true"
                     android:layout_weight="1"
                     android:theme="@style/MyRadioButton"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/black"
+                    android:buttonTint="@color/white"
+                    />
                 <RadioButton
-                    android:layout_width="88dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
                     android:id="@+id/rbDoing"
-                    android:buttonTint="@color/black"
+                    android:buttonTint="@color/white"
                     android:layout_weight="1"
                     android:text="@string/fazendo_radiobutton"
                     android:theme="@style/MyRadioButton"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/black"/>
                 <RadioButton
-                    android:layout_width="88dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
                     android:id="@+id/rbDone"
                     android:layout_weight="1"
-                    android:buttonTint="@color/black"
+                    android:buttonTint="@color/white"
                     android:text="@string/feita_radiobutton"
                     android:theme="@style/MyRadioButton"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/black"/>
             </RadioGroup>
 
             <com.google.android.material.button.MaterialButton
@@ -129,17 +131,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/buttonSave"/>
 
-            <TextView
-                android:id="@+id/textViewNome"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ashley Gabriela Ribeiro Jesus"
-                android:textColor="@color/white"
-                android:textSize="20dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/progressBar" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

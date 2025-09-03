@@ -28,7 +28,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/text_title_toolbar_register_fragment"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:layout_gravity="center_horizontal"
                 android:paddingTop="20dp"/>
 
@@ -95,6 +95,17 @@
                 android:visibility="invisible"
                 tools:visibility="visible"/>
         </LinearLayout>
+        <TextView
+            android:id="@+id/textViewNome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Leticia de Oliveira Passos"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
     </LinearLayout>
 
 </ScrollView>
