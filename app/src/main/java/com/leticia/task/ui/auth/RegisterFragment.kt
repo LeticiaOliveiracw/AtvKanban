@@ -1,4 +1,4 @@
-package com.ashley.task.ui.auth
+package com.leticia.task.ui.auth
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,13 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.ashley.task.R
-import com.ashley.task.databinding.FragmentLoginBinding
-import com.ashley.task.util.showBottomSheet
+import com.leticia.task.R
+import com.leticia.task.databinding.FragmentRegisterBinding
+import com.leticia.task.util.initToolbar
+import com.leticia.task.util.showBottomSheet
 
-class LoginFragment : Fragment() {
+class RegisterFragment : Fragment() {
 
-    private var _binding: FragmentLoginBinding? = null
+    private var _binding: FragmentRegisterBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -20,24 +21,20 @@ class LoginFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentLoginBinding.inflate(inflater, container, false)
+        // Inflate the layout for this fragment
+        _binding = FragmentRegisterBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initToolbar(binding.toolbar)
         initListener()
     }
 
     private fun initListener(){
-        binding.buttonLogin.setOnClickListener {
+        binding.buttonCriarconta.setOnClickListener{
             valideData()
-        }
-        binding.textViewCriarConta.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
-        }
-        binding.textViewRecuperarConta.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_recoverAccountFragment)
         }
     }
 
@@ -48,13 +45,12 @@ class LoginFragment : Fragment() {
             if (senha.isNotBlank()) {
                 findNavController().navigate(R.id.action_global_homeFragment)
             } else {
-                showBottomSheet(message = getString(R.string.password_empty))
+                showBottomSheet(message = getString(R.string.password_empty_register_gragment))
             }
         }else{
-            showBottomSheet(message = getString(R.string.email_empty))
+            showBottomSheet(message = getString(R.string.email_empty_register_fragment))
         }
     }
-
 
     override fun onDestroyView() {
         super.onDestroyView()

@@ -6,5 +6,5 @@
     <color name="color_delete">#F294B4</color>
     <color name="color_details">#A8FAAB</color>
     <color name="color_status_todo">#FF5F2B</color>
-    <color name="color_status_done">#D467EB</color>
+    <color name="color_status_done">#50E6CC</color>
 </resources>

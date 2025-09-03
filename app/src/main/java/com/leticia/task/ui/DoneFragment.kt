@@ -1,4 +1,4 @@
-package com.ashley.task.ui
+package com.leticia.task.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,16 +8,15 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.ashley.task.R
-import com.ashley.task.data.model.Status
-import com.ashley.task.data.model.Task
-import com.ashley.task.databinding.FragmentTodoBinding
-import com.ashley.task.ui.adapter.TaskAdapter
+import com.leticia.task.R
+import com.leticia.task.data.model.Status
+import com.leticia.task.data.model.Task
+import com.leticia.task.databinding.FragmentDoneBinding
+import com.leticia.task.ui.adapter.TaskAdapter
 
+class DoneFragment : Fragment() {
 
-class TodoFragment : Fragment() {
-
-    private var _binding: FragmentTodoBinding? = null
+    private var _binding: FragmentDoneBinding? = null
     private val binding get() = _binding!!
 
     private lateinit var taskAdapter: TaskAdapter
@@ -27,7 +26,7 @@ class TodoFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentTodoBinding.inflate(inflater, container, false)
+        _binding = FragmentDoneBinding.inflate(inflater,container,false)
         return binding.root
     }
 
@@ -65,19 +64,19 @@ class TodoFragment : Fragment() {
             TaskAdapter.SELECT_DETAILS -> {
                 Toast.makeText(requireContext(), "Detalhes ${task.description}", Toast.LENGTH_SHORT).show()
             }
-            TaskAdapter.SELECT_NEXT -> {
-                Toast.makeText(requireContext(), "Próximo", Toast.LENGTH_SHORT).show()
+            TaskAdapter.SELECT_BACK -> {
+                Toast.makeText(requireContext(), "Anterior", Toast.LENGTH_SHORT).show()
             }
         }
     }
 
     private fun getTask() {
         val taskList = listOf(
-            Task("0", "Criar um sistema de segurança para a versão web/mobile",Status.TODO),
-            Task("1","Backlog do projeto",Status.TODO),
-            Task("2","Fazer a tela de agendamento na versão mobile",Status.TODO),
-            Task("3", "Implementar sistema de feedback entre usuários",Status.TODO),
-            Task("4","Realizar uma entrevista com psicólogo",Status.TODO),
+            Task("0", "Escolha do nome e criação da logo", Status.DONE),
+            Task("1","Definição do escopo do projeto Psique", Status.DONE),
+            Task("2","Criação do protótipo no Figma", Status.DONE),
+            Task("3", "Criação do repositório no GitHub", Status.DONE),
+            Task("4","Revisão do banco de dados", Status.DONE),
         )
         taskAdapter.submitList(taskList)
     }
@@ -86,4 +85,5 @@ class TodoFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
 }

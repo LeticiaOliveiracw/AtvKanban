@@ -1,10 +1,10 @@
-package com.ashley.task.util
+package com.leticia.task.util
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
-import com.ashley.task.R
-import com.ashley.task.databinding.BottomSheetBinding
+import com.leticia.task.R
+import com.leticia.task.databinding.BottomSheetBinding
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
 
