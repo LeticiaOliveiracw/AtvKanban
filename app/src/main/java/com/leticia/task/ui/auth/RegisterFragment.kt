@@ -10,11 +10,14 @@ import com.leticia.task.R
 import com.leticia.task.databinding.FragmentRegisterBinding
 import com.leticia.task.util.initToolbar
 import com.leticia.task.util.showBottomSheet
+import com.google.firebase.auth.FirebaseAuth
 
 class RegisterFragment : Fragment() {
 
     private var _binding: FragmentRegisterBinding? = null
     private val binding get() = _binding!!
+    private lateinit var auth: FirebaseAuth
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -50,6 +53,21 @@ class RegisterFragment : Fragment() {
         }else{
             showBottomSheet(message = getString(R.string.email_empty_register_fragment))
         }
+    }
+
+    private fun registerUser(email: String ,password: String){
+
+        try {
+            val auth = FirebaseAuth.getInstance()
+        }
+        auth.createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+
+                }else{
+                }
+
+            }
     }
 
     override fun onDestroyView() {

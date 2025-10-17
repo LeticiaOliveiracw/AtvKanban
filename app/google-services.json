@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "239233515301",
+    "project_id": "taskapp-9faa8",
+    "storage_bucket": "taskapp-9faa8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:239233515301:android:dbb0354da3b134a333a4cc",
+        "android_client_info": {
+          "package_name": "com.leticia.task"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcCHiDW9du_4Nm6EUcjJXMPGIaBDY3RXU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
