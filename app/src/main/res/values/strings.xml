@@ -46,5 +46,5 @@
     <string name="text_button_registeraccount_fragment">Criar conta</string>
 
     <string name="description_empty_fome_task_fragment">Acrescente uam descrição!</string>
-    <string name="text_save_sucess_form_task_fragement">Sua tarefa foi salva com sucesso!</string>
+    <string name="text_save_sucess_form_task_fragment">Sua tarefa foi salva com sucesso!</string>
 </resources>

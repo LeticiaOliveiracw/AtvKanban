@@ -17,12 +17,9 @@ import com.leticia.task.data.model.Task
 import com.leticia.task.databinding.FragmentFormTaskBinding
 import com.leticia.task.util.initToolbar
 import com.leticia.task.util.showBottomSheet
-import java.lang.ref.Reference
-import com.google.firebase.Firebase
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.database
-import initToolbar
-import showBottonSheet
+
 
 class FormTaskFragment : Fragment() {
     private var _binding: FragmentFormTaskBinding? = null
@@ -62,7 +59,7 @@ class FormTaskFragment : Fragment() {
             valideData()
         }
 
-        binding.radioGroup.setOnClickListener { _,id-> status =
+        binding.radioGroup.setOnCheckedChangeListener{ _,id-> status =
             when(id) {
                 R.id.rbTodo -> Status.TODO
                 R.id.rbDoing -> Status.DOING
@@ -78,13 +75,15 @@ class FormTaskFragment : Fragment() {
 
             binding.progressBar.isVisible = true
 
-            if (newTask) task = Task()
-            task.id = reference.database.reference.push().key ?: ""
-            task.description = description
-            task.status = status
+            if (newTask) {
 
-            saveTask()
+                val id = reference.database.reference.push().key ?: ""
+                val description = description
+                val status = status
+                task = Task(id, description, status)
 
+                saveTask()
+            }
 
         }else{
             showBottomSheet(message = getString(R.string.description_empty_form_task_fragment))
